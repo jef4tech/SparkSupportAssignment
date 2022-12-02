@@ -28,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.573"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+         />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

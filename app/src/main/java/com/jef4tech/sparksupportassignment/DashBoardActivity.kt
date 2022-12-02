@@ -1,5 +1,6 @@
 package com.jef4tech.sparksupportassignment
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
@@ -82,6 +83,8 @@ class DashBoardActivity : AppCompatActivity() {
         val editor = preferences.edit()
         editor.clear()
         editor.apply()
+        val homeIntent = Intent(this, LoginActivity::class.java)
+        startActivity(homeIntent)
         finish()
     }
     private fun delayUi() {
