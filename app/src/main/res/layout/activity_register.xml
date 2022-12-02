@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="last_name"
-            android:inputType="textEmailAddress"
+            android:inputType="textPersonName"
             android:padding="20dp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -50,7 +50,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        app:passwordToggleEnabled="true"
         app:layout_constraintTop_toBottomOf="@id/edit_last_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -59,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="username"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:padding="20dp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -70,7 +69,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        app:passwordToggleEnabled="true"
         app:layout_constraintTop_toBottomOf="@id/edit_user_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -78,8 +76,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="username"
-            android:inputType="textPassword"
+            android:hint="email"
+            android:inputType="textEmailAddress"
             android:padding="20dp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -98,7 +96,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="username"
+            android:hint="password"
             android:inputType="textPassword"
             android:padding="20dp"/>
 
@@ -118,7 +116,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="username"
+            android:hint="confirm password"
             android:inputType="textPassword"
             android:padding="20dp"/>
 
@@ -143,7 +141,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dip"
-        android:text="name"
+        android:text="if you have account,login here"
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@id/button_register"
         app:layout_constraintStart_toStartOf="parent"

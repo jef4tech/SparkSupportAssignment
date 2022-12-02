@@ -1,24 +1,24 @@
 package com.jef4tech.sparksupportassignment.viewModel
 
-import android.app.Application
-import android.content.Intent
-import android.content.SharedPreferences
 import android.util.Log
-import androidx.core.content.ContextCompat.startActivity
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jef4tech.sparksupportassignment.DashBoardActivity
+import com.google.gson.Gson
 import com.jef4tech.sparksupportassignment.model.LoginResponse
 import com.jef4tech.sparksupportassignment.network.RestApiImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.json.JSONObject
+
+
+
+
 
 class LoginViewModel : ViewModel() {
 
-    val loading = MutableLiveData<Boolean>()
+    private val loading = MutableLiveData<Boolean>()
     val errorMessage = MutableLiveData<String>()
     var userData = MutableLiveData<LoginResponse>()
 
@@ -31,7 +31,7 @@ class LoginViewModel : ViewModel() {
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
                     try{
-                        Log.i("japan", "loginUser: ${response.body()}")
+                        Log.i("responseinfo", "loginUser: ${response.body()}")
                         userData.postValue(response.body())
                         loading.value = false
                     } catch (e: Exception) {
@@ -39,6 +39,7 @@ class LoginViewModel : ViewModel() {
                         loading.value = true
                     }
                 } else {
+
                     onError("Error ${response.message()}")
                 }
             }

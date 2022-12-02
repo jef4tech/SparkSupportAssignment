@@ -11,8 +11,8 @@ import retrofit2.http.*
 
 interface RestApis {
 
-//    @Headers("Content-Type: application/json")
-    @POST("register")
+    @Headers("Content-Type: application/json")
+    @POST("register/")
     suspend fun addUser(@Body userData: UserData): Response<RegisterResponse>
 
 

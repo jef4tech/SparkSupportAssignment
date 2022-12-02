@@ -20,10 +20,8 @@ class DashBoardViewModel: ViewModel() {
         viewModelScope.launch {
             val response = RestApiImpl.getdashboardData("Bearer  $authHeader")
             withContext(Dispatchers.Main) {
-                Log.i("needresponse", response.toString())
                 if (response.isSuccessful) {
                     try{
-                        Log.i("japan", "loginUser: ${response.body()}")
                         dashBoardData.postValue(response.body())
                         loading.value = false
                     } catch (e: Exception) {

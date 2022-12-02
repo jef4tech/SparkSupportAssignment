@@ -23,10 +23,11 @@ class RegisterViewModel: ViewModel() {
     fun addUser(userData: UserData) {
         viewModelScope.launch {
             val response = RestApiImpl.registerUser(userData)
+            Log.i("RegisterViewModel", response.message().toString())
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
                     try{
-                        Log.i("japan", "loginUser: ${response.body()}")
+
                         this@RegisterViewModel.userData.postValue(response.body())
                         loading.value = false
                     } catch (e: Exception) {
@@ -34,6 +35,7 @@ class RegisterViewModel: ViewModel() {
                         loading.value = true
                     }
                 } else {
+
                     onError("Error ${response.message()}")
                 }
             }
